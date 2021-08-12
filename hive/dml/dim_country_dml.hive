@@ -1,0 +1,4 @@
+use a_gokul;
+
+LOAD DATA LOCAL INPATH '/home/talentum/zomato_raw_files/country_code.csv'
+Overwrite INTO TABLE dim_country;

@@ -1,0 +1,6 @@
+use a_gokul;
+
+set hive.exec.dynamic.partition=true;
+set hive.exec.dynamic.partition.mode=nonstrict;
+
+INSERT into table a_gokul.zomato_summary partition(p_filedate,p_country_name) (`restaurant id`, `restaurant name`, `country code`, `city`, `address`, `locality`, `locality verbose`, `longitude`, `latitude`, `cuisines`, `average cost for two`, `currency`, `has table booking`, `has online delivery`, `is delivering now`, `switch to order menu`, `price range`, `aggregate rating`, `rating text`, `votes`, `p_filedate`, `p_country_name`, `m_cuisines`, `m_rating_colour`, `create_datetime`, `user_id`) select restaurantid,restaurantname,countrycode,city,address,locality,localityverbose,longitude,latitude,cuisines,averagecostfortwo,currency,hastablebooking,hasonlinedelivery,isdeliveringnow,switchtoordermenu,pricerange,aggregaterating,ratingtext,votes,p_filedate,p_country_name,m_cuisines,m_rating_colour, create_datetime,user_id from a_gokul.zomato_sum_temp;

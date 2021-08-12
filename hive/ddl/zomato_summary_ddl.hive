@@ -1,0 +1,3 @@
+use a_gokul;
+
+CREATE TABLE IF NOT EXISTS a_gokul.zomato_summary( `Restaurant ID` INT, `Restaurant Name` STRING, `Country Code` INT, `City` STRING, `Address` STRING, `Locality` STRING, `Locality Verbose` STRING, `Longitude` STRING, `Latitude` STRING, `Cuisines` STRING, `Average Cost for two` INT, `Currency` STRING, `Has Table booking` INT, `Has Online delivery` INT, `Is delivering now` INT, `Switch to order menu` INT, `Price range` INT, `Aggregate rating` STRING, `Rating text` STRING, `Votes` STRING, `m_rating_colour` STRING, `m_cuisines` STRING, `create_datetime` TIMESTAMP, `user_id` STRING) PARTITIONED BY ( p_filedate INT, p_country_name STRING ) stored as ORC;

@@ -1,0 +1,21 @@
+use a_gokul;
+
+LOAD DATA LOCAL INPATH '/home/talentum/zomato_etl/source/csv/zomato_20190609.csv'
+OVERWRITE INTO TABLE zomato
+PARTITION (filedate='20190609');
+
+LOAD DATA LOCAL INPATH '/home/talentum/zomato_etl/source/csv/zomato_20190610.csv'
+OVERWRITE INTO TABLE zomato
+PARTITION (filedate='20190610');
+
+LOAD DATA LOCAL INPATH '/home/talentum/zomato_etl/source/csv/zomato_20190611.csv'
+OVERWRITE INTO TABLE zomato
+PARTITION (filedate='20190611');
+
+LOAD DATA LOCAL INPATH '/home/talentum/zomato_etl/source/csv/zomato_20190612.csv'
+OVERWRITE INTO TABLE zomato
+PARTITION (filedate='20190612');
+
+LOAD DATA LOCAL INPATH '/home/talentum/zomato_etl/source/csv/zomato_20190613.csv'
+OVERWRITE INTO TABLE zomato
+PARTITION (filedate='20190613');

@@ -1,0 +1,30 @@
+use a_gokul;
+
+CREATE external TABLE IF NOT EXISTS a_gokul.zomato(`Restaurant ID` INT,
+`Restaurant Name` STRING,
+`Country Code` INT,
+`City` STRING, 
+`Address` STRING,
+`Locality` STRING,
+`Locality Verbose` STRING,
+`Longitude` STRING,
+`Latitude` STRING,
+`Cuisines` STRING,
+`Average Cost for two` INT,
+`Currency` STRING,
+`Has Table booking` INT,
+`Has Online delivery` INT,
+`Is delivering now` INT,
+`Switch to order menu` INT,
+`Price range` INT,
+`Aggregate rating` STRING,
+`Rating text` STRING,
+`Votes` STRING) 
+PARTITIONED BY (filedate int )
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'
+WITH SERDEPROPERTIES (
+"separatorChar" = ",",
+"quoteChar" = "\"")
+stored as textfile
+Location '/user/talentum/zomato_etl_a.gokul/zomato_ext/zomato'
+TBLPROPERTIES("skip.header.line.count"="1");

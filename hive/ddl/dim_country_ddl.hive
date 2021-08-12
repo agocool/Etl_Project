@@ -1,0 +1,10 @@
+use a_gokul;
+
+CREATE TABLE IF NOT EXISTS a_gokul.dim_country(
+`Country Code` int,
+`Country` string) 
+ROW FORMAT DELIMITED 
+fields terminated by ',' 
+stored as textfile
+Location '/user/talentum/zomato_etl_a.gokul/zomato_ext/dim_country'
+TBLPROPERTIES("skip.header.line.count"="1","skip.footer.line.count"="1");
